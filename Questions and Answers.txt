@@ -1,0 +1,41 @@
+1)Difference between Docker image and container?
+- Docker image is an pre-configured template or blue print it contains code,libraries,dependencies,
+-With help of docker image  we can creat image .
+-we cannot run image directoly ,we need containers to run image.
+-image -is recipe for making a product.
+-docker images command to list images in docker.
+-we do not modifiy any image we have to creat a new image. 
+-we need container to run image,containers is a light-weight server where we can run any application .
+-main difference between containers and images are containers is lightweight isolated environment where application code,shared libraries ,contains it runs on system os,and is if fast compare to virtulization and effective also.
+-image=Rsecipe to make cake.
+-container= The cake you baked from the recipe.
+
+2)Difference between systemctl start and systemctl enable?
+-systemctl start =starts the service immediately
+-systemcl enable= Tell the system to start the service automatically by boot
+
+3)What is nginx reverse proxy used for?
+-It is used where we want to distribute traffic across multiple servers.
+-It is used where we want security , it hide backend service from the internet.
+-It can also be used where multiples apps can be accesed from same doemin.
+
+
+4)How do you check which process is using a port in Linux?
+-sudo lsof -i :port_number
+
+5)What is AWS EC2 used for?
+-Aws ec2 in an compute service use for creating a virtual servers in cloud 
+-you can run websites,databases,it is just like a physical computer 
+-Insimple it is aws cloud service used for running websites,applications,and databases
+-It is elastic computing services as per demand we can scale it or it reduce the cost to setup the compute power.
+
+6)What is Jenkins used for?
+-Jenkins is used for automate software development tasks
+-like code build,code test , Deploy
+-It helps reduce manual errors and makes the deployment process faster and more reliable.
+
+7)What is CodePipeline?
+-It is an aws service used for CI-CD piplines
+-IT Automates the ci-cd and managed by aws 
+-AWS CodePipeline is a fully managed CI/CD service that automates the process of building, testing, and deploying applications.
+-It helps in creating automated workflows (pipelines) to move code from source to production.

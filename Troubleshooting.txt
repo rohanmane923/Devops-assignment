@@ -1,0 +1,64 @@
+ISSUE 1: Permission Issue (Docker not working)
+
+Issue Identified:
+After installing Docker, the command docker ps was not working and showed a permission denied error.
+
+Diagnosis:
+Ran the following command:
+docker ps
+
+It showed permission denied error.
+
+Checked Docker service:
+sudo systemctl status docker
+
+Service was running, so issue was with user permissions.
+
+Fix Applied:
+Added user to Docker group:
+sudo usermod -aG docker $USER
+
+Applied changes:
+newgrp docker
+
+Verification:
+Ran:
+docker ps
+
+Command worked without sudo and showed running containers.
+
+ISSUE 2: Application running only on localhost
+
+Issue Identified:
+The application was running but accessible only on localhost, not using public IP.
+
+Diagnosis:
+Tried accessing:
+http://<public-ip>:8080
+
+Not working.
+
+Checked running containers:
+docker ps
+
+Checked port binding:
+sudo netstat -tulnp | grep 8080
+
+Found application bound to:
+127.0.0.1:8080
+
+Fix Applied:
+Re-ran container with proper port mapping:
+docker run -d -p 8080:80 myapp
+
+Verification:
+Opened browser:
+http://<public-ip>:8080
+
+Application loaded successfully.
+
+Checked again:
+docker ps
+
+Output showed:
+0.0.0.0:8080->80/tcp
